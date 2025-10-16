@@ -11,74 +11,90 @@ var wms_layers = [];
                 url: 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
             })
         });
-var format_juterreo_1 = new ol.format.GeoJSON();
-var features_juterreo_1 = format_juterreo_1.readFeatures(json_juterreo_1, 
+var format_PavimentoTrreo_1 = new ol.format.GeoJSON();
+var features_PavimentoTrreo_1 = format_PavimentoTrreo_1.readFeatures(json_PavimentoTrreo_1, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_juterreo_1 = new ol.source.Vector({
+var jsonSource_PavimentoTrreo_1 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_juterreo_1.addFeatures(features_juterreo_1);
-var lyr_juterreo_1 = new ol.layer.Vector({
+jsonSource_PavimentoTrreo_1.addFeatures(features_PavimentoTrreo_1);
+var lyr_PavimentoTrreo_1 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_juterreo_1, 
-                style: style_juterreo_1,
-                popuplayertitle: 'ju-terreo',
+                source:jsonSource_PavimentoTrreo_1, 
+                style: style_PavimentoTrreo_1,
+                popuplayertitle: 'Pavimento Térreo',
                 interactive: true,
-    title: 'ju-terreo<br />\
-    <img src="styles/legend/juterreo_1_0.png" /> AUDIN<br />\
-    <img src="styles/legend/juterreo_1_1.png" /> BIUNILA<br />\
-    <img src="styles/legend/juterreo_1_2.png" /> COMPARTILHADO<br />\
-    <img src="styles/legend/juterreo_1_3.png" /> CORREGEDORIA<br />\
-    <img src="styles/legend/juterreo_1_4.png" /> EaD<br />\
-    <img src="styles/legend/juterreo_1_5.png" /> EdUNILA<br />\
-    <img src="styles/legend/juterreo_1_6.png" /> ILAACH<br />\
-    <img src="styles/legend/juterreo_1_7.png" /> ILACVN<br />\
-    <img src="styles/legend/juterreo_1_8.png" /> ILACVN/ILATIT<br />\
-    <img src="styles/legend/juterreo_1_9.png" /> ILAESP<br />\
-    <img src="styles/legend/juterreo_1_10.png" /> ILATIT<br />\
-    <img src="styles/legend/juterreo_1_11.png" /> IMEA<br />\
-    <img src="styles/legend/juterreo_1_12.png" /> OUVIDORIA<br />\
-    <img src="styles/legend/juterreo_1_13.png" /> PPGIES<br />\
-    <img src="styles/legend/juterreo_1_14.png" /> PRAE<br />\
-    <img src="styles/legend/juterreo_1_15.png" /> PROAGI<br />\
-    <img src="styles/legend/juterreo_1_16.png" /> PROCURADORIA<br />\
-    <img src="styles/legend/juterreo_1_17.png" /> PROEX<br />\
-    <img src="styles/legend/juterreo_1_18.png" /> PROGEPE<br />\
-    <img src="styles/legend/juterreo_1_19.png" /> PROGRAD<br />\
-    <img src="styles/legend/juterreo_1_20.png" /> PROINT<br />\
-    <img src="styles/legend/juterreo_1_21.png" /> PROPLAN<br />\
-    <img src="styles/legend/juterreo_1_22.png" /> PRPPG<br />\
-    <img src="styles/legend/juterreo_1_23.png" /> PRU<br />\
-    <img src="styles/legend/juterreo_1_24.png" /> REITORIA<br />\
-    <img src="styles/legend/juterreo_1_25.png" /> SACT<br />\
-    <img src="styles/legend/juterreo_1_26.png" /> SECAFE<br />\
-    <img src="styles/legend/juterreo_1_27.png" /> SECOM<br />\
-    <img src="styles/legend/juterreo_1_28.png" /> Uso comum<br />\
-    <img src="styles/legend/juterreo_1_29.png" /> <br />' });
-var format_limitesterreo_2 = new ol.format.GeoJSON();
-var features_limitesterreo_2 = format_limitesterreo_2.readFeatures(json_limitesterreo_2, 
+    title: 'Pavimento Térreo<br />\
+    <img src="styles/legend/PavimentoTrreo_1_0.png" /> Acadêmico<br />\
+    <img src="styles/legend/PavimentoTrreo_1_1.png" /> Administrativo<br />\
+    <img src="styles/legend/PavimentoTrreo_1_2.png" /> Atend. Individualizado<br />\
+    <img src="styles/legend/PavimentoTrreo_1_3.png" /> CORREGEDORIA<br />\
+    <img src="styles/legend/PavimentoTrreo_1_4.png" /> Auditório<br />\
+    <img src="styles/legend/PavimentoTrreo_1_5.png" /> Biblioteca<br />\
+    <img src="styles/legend/PavimentoTrreo_1_6.png" /> Circulação<br />\
+    <img src="styles/legend/PavimentoTrreo_1_7.png" /> Convivência<br />\
+    <img src="styles/legend/PavimentoTrreo_1_8.png" /> Copa – Cozinha – Cantina<br />\
+    <img src="styles/legend/PavimentoTrreo_1_9.png" /> Depósito<br />\
+    <img src="styles/legend/PavimentoTrreo_1_10.png" /> Dormitório<br />\
+    <img src="styles/legend/PavimentoTrreo_1_11.png" /> Esporte<br />\
+    <img src="styles/legend/PavimentoTrreo_1_12.png" /> Extensão<br />\
+    <img src="styles/legend/PavimentoTrreo_1_13.png" /> Lab. de Informática<br />\
+    <img src="styles/legend/PavimentoTrreo_1_14.png" /> Laboratório – Ensino<br />\
+    <img src="styles/legend/PavimentoTrreo_1_15.png" /> Laboratório – Pesquisa<br />\
+    <img src="styles/legend/PavimentoTrreo_1_16.png" /> Laboratório – Prática<br />\
+    <img src="styles/legend/PavimentoTrreo_1_17.png" /> Monitoria<br />\
+    <img src="styles/legend/PavimentoTrreo_1_18.png" /> Restaurante<br />\
+    <img src="styles/legend/PavimentoTrreo_1_19.png" /> Reunião<br />\
+    <img src="styles/legend/PavimentoTrreo_1_20.png" /> Sala de aula<br />\
+    <img src="styles/legend/PavimentoTrreo_1_21.png" /> Sala de aula (Pós)<br />\
+    <img src="styles/legend/PavimentoTrreo_1_22.png" /> Sala de estudo<br />\
+    <img src="styles/legend/PavimentoTrreo_1_23.png" /> Sala de Professores<br />\
+    <img src="styles/legend/PavimentoTrreo_1_24.png" /> Sala Técnica<br />\
+    <img src="styles/legend/PavimentoTrreo_1_25.png" /> Sanitários<br />\
+    <img src="styles/legend/PavimentoTrreo_1_26.png" /> Saúde<br />\
+    <img src="styles/legend/PavimentoTrreo_1_27.png" /> <br />' });
+var format_terreno_2 = new ol.format.GeoJSON();
+var features_terreno_2 = format_terreno_2.readFeatures(json_terreno_2, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_limitesterreo_2 = new ol.source.Vector({
+var jsonSource_terreno_2 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_limitesterreo_2.addFeatures(features_limitesterreo_2);
-var lyr_limitesterreo_2 = new ol.layer.Vector({
+jsonSource_terreno_2.addFeatures(features_terreno_2);
+var lyr_terreno_2 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_limitesterreo_2, 
-                style: style_limitesterreo_2,
-                popuplayertitle: 'limites-terreo',
-                interactive: false,
-                title: '<img src="styles/legend/limitesterreo_2.png" /> limites-terreo'
+                source:jsonSource_terreno_2, 
+                style: style_terreno_2,
+                popuplayertitle: 'terreno',
+                interactive: true,
+                title: '<img src="styles/legend/terreno_2.png" /> terreno'
+            });
+var format_NvelTrreo_3 = new ol.format.GeoJSON();
+var features_NvelTrreo_3 = format_NvelTrreo_3.readFeatures(json_NvelTrreo_3, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_NvelTrreo_3 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_NvelTrreo_3.addFeatures(features_NvelTrreo_3);
+var lyr_NvelTrreo_3 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_NvelTrreo_3, 
+                style: style_NvelTrreo_3,
+                popuplayertitle: 'Nível Térreo',
+                interactive: true,
+                title: '<img src="styles/legend/NvelTrreo_3.png" /> Nível Térreo'
             });
 
-lyr_GoogleSatellite_0.setVisible(true);lyr_juterreo_1.setVisible(true);lyr_limitesterreo_2.setVisible(true);
-var layersList = [lyr_GoogleSatellite_0,lyr_juterreo_1,lyr_limitesterreo_2];
-lyr_juterreo_1.set('fieldAliases', {'ID': 'ID', 'ju-terreo_SALA': 'SALA', 'ju-terreo_DESCRICAO': 'DESCRICAO', 'ju-terreo_AREA': 'AREA', 'ju-terreo_CAPACIDADE': 'CAPACIDADE', 'ju-terreo_USO': 'USO', 'ju-terreo_SETOR': 'SETOR', 'ju-terreo_RESPONSAVEL': 'RESPONSAVEL', });
-lyr_limitesterreo_2.set('fieldAliases', {'ID': 'ID', });
-lyr_juterreo_1.set('fieldImages', {'ID': 'TextEdit', 'ju-terreo_SALA': 'TextEdit', 'ju-terreo_DESCRICAO': 'TextEdit', 'ju-terreo_AREA': 'TextEdit', 'ju-terreo_CAPACIDADE': 'Range', 'ju-terreo_USO': 'TextEdit', 'ju-terreo_SETOR': 'TextEdit', 'ju-terreo_RESPONSAVEL': 'TextEdit', });
-lyr_limitesterreo_2.set('fieldImages', {'ID': 'TextEdit', });
-lyr_juterreo_1.set('fieldLabels', {'ID': 'inline label - visible with data', 'ju-terreo_SALA': 'inline label - visible with data', 'ju-terreo_DESCRICAO': 'inline label - visible with data', 'ju-terreo_AREA': 'inline label - visible with data', 'ju-terreo_CAPACIDADE': 'inline label - visible with data', 'ju-terreo_USO': 'inline label - visible with data', 'ju-terreo_SETOR': 'inline label - visible with data', 'ju-terreo_RESPONSAVEL': 'inline label - visible with data', });
-lyr_limitesterreo_2.set('fieldLabels', {'ID': 'inline label - visible with data', });
-lyr_limitesterreo_2.on('precompose', function(evt) {
+lyr_GoogleSatellite_0.setVisible(true);lyr_PavimentoTrreo_1.setVisible(true);lyr_terreno_2.setVisible(true);lyr_NvelTrreo_3.setVisible(true);
+var layersList = [lyr_GoogleSatellite_0,lyr_PavimentoTrreo_1,lyr_terreno_2,lyr_NvelTrreo_3];
+lyr_PavimentoTrreo_1.set('fieldAliases', {'ID': 'ID', 'ju-terreo_SALA': 'SALA', 'ju-terreo_DESCRICAO': 'DESCRICAO', 'ju-terreo_AREA': 'AREA', 'ju-terreo_CAPACIDADE': 'CAPACIDADE', 'ju-terreo_USO': 'USO', 'ju-terreo_SETOR': 'SETOR', 'ju-terreo_RESPONSAVEL': 'RESPONSAVEL', });
+lyr_terreno_2.set('fieldAliases', {'id': 'id', 'Nome': 'Nome', 'Area': 'Area', 'Perimetro': 'Perimetro', });
+lyr_NvelTrreo_3.set('fieldAliases', {'ID': 'ID', 'nome': 'Prédio', 'url': 'Mais info', });
+lyr_PavimentoTrreo_1.set('fieldImages', {'ID': 'TextEdit', 'ju-terreo_SALA': 'TextEdit', 'ju-terreo_DESCRICAO': 'TextEdit', 'ju-terreo_AREA': 'TextEdit', 'ju-terreo_CAPACIDADE': 'Range', 'ju-terreo_USO': 'TextEdit', 'ju-terreo_SETOR': 'TextEdit', 'ju-terreo_RESPONSAVEL': 'TextEdit', });
+lyr_terreno_2.set('fieldImages', {'id': 'TextEdit', 'Nome': 'TextEdit', 'Area': 'TextEdit', 'Perimetro': 'TextEdit', });
+lyr_NvelTrreo_3.set('fieldImages', {'ID': 'TextEdit', 'nome': 'TextEdit', 'url': 'TextEdit', });
+lyr_PavimentoTrreo_1.set('fieldLabels', {'ID': 'inline label - visible with data', 'ju-terreo_SALA': 'inline label - visible with data', 'ju-terreo_DESCRICAO': 'inline label - visible with data', 'ju-terreo_AREA': 'inline label - visible with data', 'ju-terreo_CAPACIDADE': 'inline label - visible with data', 'ju-terreo_USO': 'inline label - visible with data', 'ju-terreo_SETOR': 'inline label - visible with data', 'ju-terreo_RESPONSAVEL': 'inline label - visible with data', });
+lyr_terreno_2.set('fieldLabels', {'id': 'inline label - visible with data', 'Nome': 'inline label - visible with data', 'Area': 'inline label - visible with data', 'Perimetro': 'inline label - visible with data', });
+lyr_NvelTrreo_3.set('fieldLabels', {'ID': 'hidden field', 'nome': 'inline label - visible with data', 'url': 'inline label - visible with data', });
+lyr_NvelTrreo_3.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });

@@ -9,7 +9,7 @@ var map = new ol.Map({
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([-6075201.585079, -2933203.992085, -6074824.424032, -2932939.620772], map.getSize());
+map.getView().fit([-6075329.055391, -2933258.423520, -6074763.655952, -2932843.047959], map.getSize());
 
 ////small screen definition
     var hasTouchScreen = map.getViewport().classList.contains('ol-touch');
@@ -445,6 +445,17 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 
 //title
 
+var Title = new ol.control.Control({
+    element: (() => {
+        var titleElement = document.createElement('div');
+        titleElement.className = 'bottom-left-title ol-control';
+        titleElement.innerHTML = '<h2 class="project-title">UNILA Jardim Universitário</h2>';
+        return titleElement;
+    })(),
+    target: 'bottom-left-container'
+});
+map.addControl(Title)
+    
 //abstract
 
 
@@ -464,7 +475,7 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 //layer search
 
 var searchLayer = new SearchLayer({
-    layer: lyr_juterreo_1,
+    layer: lyr_PavimentoTrreo_1,
     colName: 'ju-terreo_DESCRICAO',
     zoom: 10,
     collapsed: true,
@@ -482,11 +493,22 @@ document.getElementsByClassName('search-layer-input-search')[0].placeholder = 'S
 //layerswitcher
 
 var layerSwitcher = new ol.control.LayerSwitcher({
-    tipLabel: "Layers",
-    target: 'top-right-container'
-});
+    activationMode: 'click',
+	startActive: true,
+	tipLabel: "Layers",
+    target: 'top-right-container',
+	collapseLabel: '»',
+	collapseTipLabel: 'Close'
+    });
 map.addControl(layerSwitcher);
-    
+if (hasTouchScreen || isSmallScreen) {
+	document.addEventListener('DOMContentLoaded', function() {
+		setTimeout(function() {
+			layerSwitcher.hidePanel();
+		}, 500);
+	});	
+}
+
 
 
 
